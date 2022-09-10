@@ -5,7 +5,7 @@ from helpers.helpers import create_pg_engine
 
 
 
-def weather_etl():
+def weather_pipeline():
 
     cities = ["canberra", "sydney", "darwin", "brisbane", "adelaide"] 
 
@@ -38,4 +38,4 @@ def weather_etl():
 
 # extract some data 
 if __name__ == "__main__":
-    weather_etl()
+    weather_pipeline()

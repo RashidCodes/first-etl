@@ -7,7 +7,7 @@ from helpers.helpers import create_pg_engine
 
 
 
-class TestClass:
+class TestWeather:
 
     def setup_class(self):
         
@@ -72,12 +72,6 @@ class TestClass:
 
 
         assert status == True
-
-
-
-        
-
-
 
 
 

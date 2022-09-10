@@ -2,6 +2,8 @@ import datetime as dt
 import json
 import requests
 
+
+
 def extract_weather(city_name: str, units: str = "metric") -> list:
 
 
