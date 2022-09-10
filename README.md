@@ -19,10 +19,14 @@ This directory contains all extract, load, and transform logic. New functions ca
 ## ```tests```
 This directory contains all tests for the project. I strongly suggest using TDD. Each function should be tested before it's implemented in any pipeline. Tests pay dividends in the long run.
 
+<br/>
+
+## ```pipelines```
+All pipelines are stored in this directory. Pipelines files should be context specific, for e.g. the weather pipeline is created in the ```weather_pipeline.py``` file.
+
 
 <br/>
 
 
-
-### Todo 
+# Todo 
 - Logging
