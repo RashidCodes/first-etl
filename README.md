@@ -1,6 +1,6 @@
-# First ETL  
+# Basic ETL
 
-There might be a time when your business wants to perform some very basic ETL for a small dataset. You can use the project structure in your project.
+You can use this project structure for a simple ETL process. In this example, I extract weather data about some states in Australia, transform the data, and load the data into a postgresql database.
 
 <br/>
 
@@ -17,12 +17,12 @@ This directory contains all extract, load, and transform logic. New functions ca
 <br/>
 
 ## ```tests```
-This directory contains all tests for the project. I strongly suggest using TDD. Each function should be tested before it's implemented in any pipeline. Tests pay dividends in the long run.
+This directory contains all tests for the project. Each test class must be context-specific i.e. all tests for the weather pipeline should have their own group of tests (test class). I strongly suggest using TDD in your pipeline development. Each function should be tested before it's implemented in any pipeline. This can be easily achieved by writing tests as you build the application. Tests pay dividends in the long run.
 
 <br/>
 
 ## ```pipelines```
-All pipelines are stored in this directory. Pipelines files should be context specific, for e.g. the weather pipeline is created in the ```weather_pipeline.py``` file.
+All pipelines are stored in this directory. Pipeline files should be context specific, for e.g. the weather pipeline is created in the ```weather_pipeline.py``` file.
 
 
 <br/>
