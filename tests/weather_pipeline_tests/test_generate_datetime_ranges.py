@@ -1,4 +1,4 @@
-from helpers.helpers import generate_datetime_ranges
+from helpers.weather_pipeline_helpers.helpers import generate_datetime_ranges
 
 
 

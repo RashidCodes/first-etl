@@ -1,13 +1,13 @@
 import pandas as pd 
 import json 
-from py_etl.extract import extract_weather
-from py_etl.transform import transform_weather
-from py_etl.load import load_weather
-from helpers.helpers import create_pg_engine
+from py_etl.weather_pipeline_etl.extract import extract_weather
+from py_etl.weather_pipeline_etl.transform import transform_weather
+from py_etl.weather_pipeline_etl.load import load_weather
+from helpers.weather_pipeline_helpers.helpers import create_pg_engine
 
 
 
-class TestClass:
+class TestWeather:
 
     def setup_class(self):
         
@@ -72,12 +72,6 @@ class TestClass:
 
 
         assert status == True
-
-
-
-        
-
-
 
 
 

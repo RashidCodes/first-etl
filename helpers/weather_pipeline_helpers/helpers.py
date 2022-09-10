@@ -82,6 +82,8 @@ def generate_datetime_ranges(
 
 def create_pg_engine():
 
+    """ Create engine to connect to Postgresql """
+
     
     # Config information 
     config_path = r"/Users/kingmoh/Desktop/first-etl/secrets/config.json"
