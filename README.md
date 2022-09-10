@@ -7,12 +7,12 @@ You can use this project structure for a simple ETL process. In this example, I 
 # The Structure
 
 ## The ```helpers``` directory
-The ```helpers``` directory contains ```helpers.py``` which contains all helper functions. In future, these functions can be categorised into various subjects.
+The ```helpers``` directory contains ```{pipeline_name}.ehelpers.py``` which contains all helper functions. These functions are categorised in subject area (different pipelines)
 
 <br/>
 
 ## ```py_etl``` 
-This directory contains all extract, load, and transform logic. New functions can be added to the ```extract.py```, ```transform.py```, and ```load.py``` scripts after testing. These modules can also be grouped by subject area in the future.
+This directory contains all extract, load, and transform logic. New functions can be added to the ```{pipeline_name}.extract.py```, ```{pipeline_name}.transform.py```, and ```{pipeline_name}.load.py``` scripts. etl logic is also grouped by pipeline name.
 
 <br/>
 
