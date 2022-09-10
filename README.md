@@ -7,7 +7,7 @@ You can use this project structure for a simple ETL process. In this example, I 
 # The Structure
 
 ## The ```helpers``` directory
-The ```helpers``` directory contains ```{pipeline_name}.ehelpers.py``` which contains all helper functions. These functions are categorised in subject area (different pipelines)
+The ```helpers``` directory contains ```{pipeline_name}.helpers.py``` which contains all helper functions. These functions are categorised in subject area (different pipelines)
 
 <br/>
 
