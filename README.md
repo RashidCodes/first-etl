@@ -12,7 +12,7 @@ The ```helpers``` directory contains ```helpers.py``` which contains all helper 
 <br/>
 
 ## ```py_etl``` 
-This directory contains all extract, load, and transform logic. New functions can be added to the ```extract.py```, ```transform.py```, and ```load.py``` scripts after testing.
+This directory contains all extract, load, and transform logic. New functions can be added to the ```extract.py```, ```transform.py```, and ```load.py``` scripts after testing. These modules can also be grouped by subject area in the future.
 
 <br/>
 
