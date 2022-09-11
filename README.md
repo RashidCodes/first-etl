@@ -26,7 +26,3 @@ All pipelines are stored in this directory. Pipeline files should be context spe
 
 
 <br/>
-
-
-# Todo 
-- Logging
