@@ -1,0 +1,6 @@
+[INFO][2022-09-11 18:40:50,362][weather_pipeline.py]: Commencing extract
+[INFO][2022-09-11 18:40:53,222][weather_pipeline.py]: Extract complete
+[INFO][2022-09-11 18:40:53,222][weather_pipeline.py]: Commencing weather data transformation
+[INFO][2022-09-11 18:40:53,230][weather_pipeline.py]: Transformation complete
+[INFO][2022-09-11 18:40:53,231][weather_pipeline.py]: Commencing loading
+[INFO][2022-09-11 18:40:53,339][weather_pipeline.py]: Data load complete
