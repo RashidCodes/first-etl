@@ -1,16 +1,30 @@
-from py_etl.extract import extract_weather 
-from py_etl.transform import transform_weather 
-from py_etl.load import load_weather
-from helpers.helpers import create_pg_engine
+from py_etl.weather_pipeline_etl.extract import extract_weather 
+from py_etl.weather_pipeline_etl.transform import transform_weather 
+from py_etl.weather_pipeline_etl.load import load_weather
+from helpers.weather_pipeline_helpers.helpers import create_pg_engine
+from pathlib import Path
+import logging 
 
 
 
 def weather_pipeline():
 
+    log_file = f"{Path.cwd()}/logs/weather_pipeline_logs/weather_pipeline.log"
+
+
+    # Logging
+    # format: https://docs.python.org/3/library/logging.html#logging.LogRecord
+    logging.basicConfig(format="[%(levelname)s][%(asctime)s][%(filename)s]: %(message)s", filename=log_file) 
+    logger = logging.getLogger(__file__)
+    logger.setLevel(logging.INFO)
+
+
     cities = ["canberra", "sydney", "darwin", "brisbane", "adelaide"] 
 
 
     weather_data = [] 
+
+    logger.info("Commencing extract")
 
 
     for city_name in cities:
@@ -21,18 +35,24 @@ def weather_pipeline():
         weather_data.append(data)
 
 
+    logger.info("Extract complete") 
 
-    # load it
+
+
     # convert to dataframe 
+    logger.info("Commencing weather data transformation")
     weather_data = transform_weather(weather_data)   # returns pd.DataFrame
 
+    logger.info("Transformation complete")
 
+
+    logger.info("Commencing loading")
     if load_weather(weather_data):
-        print("Successfully loaded weather data")
+        logger.info("Data load complete")
         exit()
 
+    logger.error("ETL process failed")
 
-    print("ETL process failed")
 
 
 
