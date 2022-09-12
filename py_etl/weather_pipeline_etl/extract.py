@@ -1,6 +1,7 @@
 import datetime as dt 
 import json
 import requests
+import yaml
 
 
 
@@ -8,10 +9,12 @@ def extract_weather(city_name: str, units: str = "metric") -> list:
 
 
     # Configuration 
-    config_path = r"/Users/kingmoh/Desktop/first-etl/secrets/config.json"
+
+    config_path = r"/Users/kingmoh/Desktop/first-etl/secrets/config.yaml"
 
     with open(config_path) as config_file:
-        config = json.load(config_file)
+        config = yaml.safe_load(config_file)
+
 
 
     params = {

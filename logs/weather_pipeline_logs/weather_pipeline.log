@@ -4,3 +4,34 @@
 [INFO][2022-09-11 18:40:53,230][weather_pipeline.py]: Transformation complete
 [INFO][2022-09-11 18:40:53,231][weather_pipeline.py]: Commencing loading
 [INFO][2022-09-11 18:40:53,339][weather_pipeline.py]: Data load complete
+[INFO][2022-09-12 20:46:05,822][weather_pipeline.py]: Commencing extract
+[INFO][2022-09-12 20:46:08,626][weather_pipeline.py]: Extract complete
+[INFO][2022-09-12 20:46:08,628][weather_pipeline.py]: Commencing weather data transformation
+[INFO][2022-09-12 20:46:08,635][weather_pipeline.py]: Transformation complete
+[INFO][2022-09-12 20:46:08,635][weather_pipeline.py]: Commencing loading
+[INFO][2022-09-12 20:46:08,749][weather_pipeline.py]: Data load complete
+[INFO][2022-09-12 20:47:17,771][weather_pipeline.py]: Commencing extract
+[INFO][2022-09-12 20:47:20,672][weather_pipeline.py]: Extract complete
+[INFO][2022-09-12 20:47:20,672][weather_pipeline.py]: Commencing weather data transformation
+[INFO][2022-09-12 20:47:20,677][weather_pipeline.py]: Transformation complete
+[INFO][2022-09-12 20:47:20,677][weather_pipeline.py]: Commencing loading
+[INFO][2022-09-12 20:47:20,782][weather_pipeline.py]: Data load complete
+[INFO][2022-09-12 20:48:47,549][weather_pipeline.py]: Commencing extract
+[INFO][2022-09-12 20:48:50,325][weather_pipeline.py]: Extract complete
+[INFO][2022-09-12 20:48:50,326][weather_pipeline.py]: Commencing weather data transformation
+[INFO][2022-09-12 20:48:50,333][weather_pipeline.py]: Transformation complete
+[INFO][2022-09-12 20:48:50,333][weather_pipeline.py]: Commencing loading
+[INFO][2022-09-12 20:48:50,453][weather_pipeline.py]: Data load complete
+[INFO][2022-09-12 20:50:23,647][weather_pipeline.py]: Commencing extract
+[INFO][2022-09-12 20:50:31,242][weather_pipeline.py]: Commencing extract
+[INFO][2022-09-12 20:50:34,007][weather_pipeline.py]: Extract complete
+[INFO][2022-09-12 20:50:34,008][weather_pipeline.py]: Commencing weather data transformation
+[INFO][2022-09-12 20:50:34,016][weather_pipeline.py]: Transformation complete
+[INFO][2022-09-12 20:50:34,017][weather_pipeline.py]: Commencing loading
+[INFO][2022-09-12 20:50:34,136][weather_pipeline.py]: Data load complete
+[INFO][2022-09-12 20:58:30,599][weather_pipeline.py]: Commencing extract
+[INFO][2022-09-12 20:58:33,835][weather_pipeline.py]: Extract complete
+[INFO][2022-09-12 20:58:33,835][weather_pipeline.py]: Commencing weather data transformation
+[INFO][2022-09-12 20:58:33,842][weather_pipeline.py]: Transformation complete
+[INFO][2022-09-12 20:58:33,842][weather_pipeline.py]: Commencing loading
+[INFO][2022-09-12 20:58:33,981][weather_pipeline.py]: Data load complete

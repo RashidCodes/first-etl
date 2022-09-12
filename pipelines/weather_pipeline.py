@@ -2,14 +2,13 @@ from py_etl.weather_pipeline_etl.extract import extract_weather
 from py_etl.weather_pipeline_etl.transform import transform_weather 
 from py_etl.weather_pipeline_etl.load import load_weather
 from helpers.weather_pipeline_helpers.helpers import create_pg_engine
-from pathlib import Path
 import logging 
 
 
 
 def weather_pipeline():
 
-    log_file = f"{Path.cwd()}/logs/weather_pipeline_logs/weather_pipeline.log"
+    log_file = f"./logs/weather_pipeline_logs/weather_pipeline.log"
 
 
     # Logging

@@ -26,3 +26,11 @@ All pipelines are stored in this directory. Pipeline files should be context spe
 
 
 <br/>
+
+# Lessons
+
+- Config data can also be stored in a yaml file.
+
+```python 
+pip install pyyaml
+```

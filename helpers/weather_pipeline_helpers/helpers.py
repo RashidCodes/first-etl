@@ -1,5 +1,6 @@
 import datetime as dt
 import json
+import yaml
 from sqlalchemy import create_engine
 from sqlalchemy.engine import URL
 from sqlalchemy.dialects import postgresql
@@ -86,12 +87,12 @@ def create_pg_engine():
 
     
     # Config information 
-    config_path = r"/Users/kingmoh/Desktop/first-etl/secrets/config.json"
-    
-    with open(config_path) as config_file:
-        config = json.load(config_file)
+    config_path = r"/Users/kingmoh/Desktop/first-etl/secrets/config.yaml"
 
-    
+    with open(config_path) as config_file:
+        config = yaml.safe_load(config_file)
+
+       
     # User info 
     db_user = config["database"]["db_user"]
     db_password = config["database"]["db_password"]
