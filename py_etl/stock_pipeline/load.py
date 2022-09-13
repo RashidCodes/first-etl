@@ -6,7 +6,7 @@ from pandas import DataFrame
 
 
 # load trades
-def load_trades(target_table_name: str = "tbl_tesla_trades", df: DataFrame):
+def load_trades(df:DataFrame, target_table_name: str = "tbl_tesla_trades"):
 
     target_database_engine = create_pg_engine()
 
@@ -25,6 +25,8 @@ def load_trades(target_table_name: str = "tbl_tesla_trades", df: DataFrame):
 
     # create the table
     meta.create_all(target_database_engine)
+
+    insert_statement = postgresql.insert(stock_price_trades).values(df.to_dict(orient="records"))
 
     upsert_statement = insert_statement.on_conflict_do_update(
             index_elements=["tradeID", "timestamp", "exchange"],
