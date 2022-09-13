@@ -34,3 +34,8 @@ All pipelines are stored in this directory. Pipeline files should be context spe
 ```python 
 pip install pyyaml
 ```
+
+
+# Pushing centralised logs to a logging database 
+
+Save the logs in the Postgresql DB
