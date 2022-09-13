@@ -12,7 +12,7 @@ import yaml
 
 if __name__ == '__main__':
 
-    """ Extract trades from Alpaca and load them into Postgres """
+    """ Extract trades from Alpaca and load them into Postgres. Filter the trades with the yaml file"""
 
 
     # An empty dataframe to store all trades from the pipeline config

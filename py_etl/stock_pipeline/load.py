@@ -8,6 +8,27 @@ from pandas import DataFrame
 # load trades
 def load_trades(df:DataFrame, target_table_name: str = "tbl_tesla_trades"):
 
+    """ Load trades using the Alpaca API 
+
+    Parameters
+    ----------
+
+    df: DataFrame 
+        A dataframe containing transformed trades 
+
+
+    target_table_name: str 
+        The name of the target table 
+    
+
+
+    Returns
+    -------
+    None
+
+
+    """
+
     target_database_engine = create_pg_engine()
 
     # create table if it does not exist 
