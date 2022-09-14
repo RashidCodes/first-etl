@@ -134,26 +134,19 @@ def build_trade_model(file_path: str, target_table: str, engine, text, exchange_
 
     """ 
 
-    try:
-        # create the postgres engine
-        engine = create_pg_engine()
+    # create the postgres engine
+    engine = create_pg_engine()
 
-        # open model file
-        with open(f"{file_path}") as model:
-            raw_sql = model.read() 
-
-
-        # parse model with jinja
-        parsed_sql = j2.Template(raw_sql).render(target_table=target_table, engine=engine, text=text, exchange_code=exchange_code)
-
-        # run the model 
-        engine.execute(parsed_sql)
+    # open model file
+    with open(f"{file_path}") as model:
+        raw_sql = model.read() 
 
 
-    except BaseException as err:
-        print("Unable to run model")
-        print(err)
+    # parse model with jinja
+    parsed_sql = j2.Template(raw_sql).render(target_table=target_table, engine=engine, text=text, exchange_code=exchange_code)
 
+    # run the model 
+    engine.execute(parsed_sql)
 
-    else:
-        print("Successfully run model")
+    
+    print("Successfully run model")
