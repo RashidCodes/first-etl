@@ -12,4 +12,4 @@ create table kingmoh.public.{{ target_table }} as
         price,
         size,
         substring(trade_conditions, 4,1) as trade_condition
-    from kingmoh.public.raw_trades; 
+    from public.raw_trades; 

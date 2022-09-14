@@ -98,7 +98,12 @@ class TestModels:
 
 
         # build the model
-        build_trade_model(model, target_table, engine, text, exchange_codes_mod)
+        try:
+
+            build_trade_model(model, target_table, engine, text, exchange_codes_mod)
+
+        except BaseException as err:
+            pytest.fail(f"Unexpected error: {err}")
 
 
 
