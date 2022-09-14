@@ -2,7 +2,7 @@ from py_etl.stock_pipeline.extract import extract_trades
 from py_etl.stock_pipeline.transform import transform_trades
 from py_etl.stock_pipeline.load import load_trades
 from helpers.weather_pipeline_helpers.helpers import create_pg_engine, build_trade_model
-from sqlalchemy import Table, Column, Integer, String, MetaData, Float
+from sqlalchemy import Table, Column, Integer, String, MetaData, Float, text
 from sqlalchemy.dialects import postgresql
 from pathlib import Path 
 import pandas as pd
@@ -98,7 +98,7 @@ class TestModels:
 
 
         # build the model
-        build_trade_model(model, target_table, text, exchange_codes_mod)
+        build_trade_model(model, target_table, engine, text, exchange_codes_mod)
 
 
 

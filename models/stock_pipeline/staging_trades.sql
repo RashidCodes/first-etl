@@ -4,7 +4,7 @@
     drop table {{ target_table }};
 {% endif %}
 
-create table {{ target_table }} as 
+create table kingmoh.public.{{ target_table }} as 
     select 
         trade_id,
         timestamp,
@@ -12,4 +12,4 @@ create table {{ target_table }} as
         price,
         size,
         substring(trade_conditions, 4,1) as trade_condition
-    from public.raw_trades; 
+    from kingmoh.public.raw_trades; 
