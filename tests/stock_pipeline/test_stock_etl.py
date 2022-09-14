@@ -84,6 +84,22 @@ class TestTrades:
 class TestModels:
 
 
-    model = f"{Path.cwd()/py_etl/stock_pipeline/
+
+    def test_build_trades_model(self):
+
+        model = f"./models/stock_pipeline/staging_trades.sql"
+        target_table = "test_model"
+        engine = create_pg_engine()
+
+
+        # read in the exchange codes
+        exchange_codes = pd.read_csv('./data/exchange_codes.csv')
+        exchange_codes_mod = {record[0]: record[1] for record in exchange_codes.to_dict(orient='tight').get('data')}
+
+
+        # build the model
+        build_trade_model(model, target_table, text, exchange_codes_mod)
+
+
 
 
