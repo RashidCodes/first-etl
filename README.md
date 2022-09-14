@@ -24,16 +24,18 @@ This directory contains all tests for the project. Each test class must be conte
 ## ```pipelines```
 All pipelines are stored in this directory. Pipeline files should be context specific, for e.g. the weather pipeline is created in the ```weather_pipeline.py``` file.
 
+<br/>
+
+## ```models``` 
+Use ```.sql``` files and Jinja in the models directory to perform the ```T``` part of **ELT**. 
+
 
 <br/>
 
-# Lessons
+# Todo 
+- Add logging for ELT 
+- 
 
-- Config data can also be stored in a yaml file.
-
-```python 
-pip install pyyaml
-```
 
 
 # Pushing centralised logs to a logging database 
