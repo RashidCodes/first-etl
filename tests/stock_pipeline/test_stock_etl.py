@@ -8,6 +8,7 @@ from pathlib import Path
 import pandas as pd
 import json
 import yaml
+from pytest import fail
 
 
 class TestTrades:
@@ -84,27 +85,46 @@ class TestTrades:
 class TestModels:
 
 
+    
+    engine = create_pg_engine()
 
-    def test_build_trades_model(self):
 
-        model = f"./models/stock_pipeline/staging_trades.sql"
-        target_table = "test_model"
-        engine = create_pg_engine()
+    def test_staging(self):
 
+        # Staging
+
+        model_path = f"./models/stock_pipeline/staging_trades.sql"
+
+        target_table = "test_staging"
+
+        
+        # build the model
+        try:
+
+            build_trade_model(file_path=model_path, target_table=target_table, engine=self.engine, text=text, exchange_code=None)
+
+        except BaseException as err:
+            fail(f"Unexpected error: {err}")
+
+
+
+    def test_serving(self):
+        # apply the transformation (ELT)
+
+        target_table = "test_serving"
+        model_path = f"./models/stock_pipeline/serving_trades.sql"
 
         # read in the exchange codes
         exchange_codes = pd.read_csv('./data/stock_pipeline/exchange_codes.csv')
         exchange_codes_mod = {record[0]: record[1] for record in exchange_codes.to_dict(orient='tight').get('data')}
 
 
-        # build the model
+         # build the model
         try:
 
-            build_trade_model(model, target_table, engine, text, exchange_codes_mod)
+            build_trade_model(file_path=model_path, target_table=target_table, engine=self.engine, text=text, exchange_code=exchange_codes_mod)
 
         except BaseException as err:
-            pytest.fail(f"Unexpected error: {err}")
-
-
+            fail(f"Unexpected error: {err}")
 
 
