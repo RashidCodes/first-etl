@@ -1,9 +1,10 @@
 from py_etl.stock_pipeline.extract import extract_trades
 from py_etl.stock_pipeline.transform import transform_trades
 from py_etl.stock_pipeline.load import load_trades
-from helpers.weather_pipeline_helpers.helpers import create_pg_engine
+from helpers.weather_pipeline_helpers.helpers import create_pg_engine, build_trades_model
 from sqlalchemy import Table, Column, Integer, String, MetaData, Float
 from sqlalchemy.dialects import postgresql
+from pathlib import Path 
 import pandas as pd
 import json
 import yaml
@@ -76,3 +77,13 @@ class TestTrades:
 
         # load the trades
         load_trades(trades_df, target_table_name="tbl_test_load_trades")
+
+
+
+
+class TestModels:
+
+
+    model = f"{Path.cwd()/py_etl/stock_pipeline/
+
+

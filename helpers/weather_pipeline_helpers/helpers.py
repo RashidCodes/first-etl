@@ -1,7 +1,7 @@
 import datetime as dt
 import json
 import yaml
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, text
 from sqlalchemy.engine import URL
 from sqlalchemy.dialects import postgresql
 
@@ -115,4 +115,43 @@ def create_pg_engine():
     return engine 
 
 
+def build_trade_model(file_path: str, table_name: str, engine, text, exchange_code: dict):
 
+    """ Run models
+
+
+    Parameters
+    ----------
+    file_path: str
+        The file path of the model 
+
+
+    Returns
+    -------
+    None 
+
+    """ 
+
+    try:
+        # create the postgres engine
+        engine = create_pg_engine()
+
+        # open model file
+        with open(f"{file_path}") as model:
+            raw_sql = model.read() 
+
+
+        # parse model with jinja
+        parsed_sql = j2.Template(raw_sql).render(target_table="stage_transform", engine=engine, text=text, exchange_code=exchange_code)i
+
+        # run the model 
+        engine.execute(parsed_sql)
+
+
+    except BaseException as err:
+        print("Unable to run model")
+        print(err)
+
+
+    else:
+        print("Successfully run model")
