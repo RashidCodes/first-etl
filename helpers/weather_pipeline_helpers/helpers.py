@@ -115,7 +115,7 @@ def create_pg_engine():
     return engine 
 
 
-def build_trade_model(file_path: str, table_name: str, engine, text, exchange_code: dict):
+def build_trade_model(file_path: str, target_table: str, engine, text, exchange_code: dict):
 
     """ Run models
 
@@ -142,7 +142,7 @@ def build_trade_model(file_path: str, table_name: str, engine, text, exchange_co
 
 
         # parse model with jinja
-        parsed_sql = j2.Template(raw_sql).render(target_table="stage_transform", engine=engine, text=text, exchange_code=exchange_code)i
+        parsed_sql = j2.Template(raw_sql).render(target_table=target_table, engine=engine, text=text, exchange_code=exchange_code)
 
         # run the model 
         engine.execute(parsed_sql)
